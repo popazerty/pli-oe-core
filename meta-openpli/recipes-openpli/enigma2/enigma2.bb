@@ -169,7 +169,7 @@ PKGV = "2.7+git${GITPKGV}"
 
 ENIGMA2_BRANCH ?= "develop"
 GITHUB_URI ?= "git://github.com"
-SRC_URI = "${@bb.utils.contains("TARGET_ARCH", "sh4", "${GITHUB_URI}/MastaG/enigma2-openpli-fulan.git;branch=master" , "${GITHUB_URI}/OpenPLi/${BPN}.git;branch=${ENIGMA2_BRANCH}", d)}"
+SRC_URI = "${@bb.utils.contains("TARGET_ARCH", "sh4", "${GITHUB_URI}/MastaG/enigma2-openpli-fulan.git;branch=master" , "${GITHUB_URI}/MastaG/${BPN}.git;branch=${ENIGMA2_BRANCH}", d)}"
 
 LDFLAGS_prepend = " ${@bb.utils.contains("TARGET_ARCH", "sh4", "", "-lxml2", d)} "
 
@@ -204,6 +204,7 @@ EXTRA_OECONF = "\
 	${@get_crashaddr(d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "textlcd", "--with-textlcd" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "7segment", "--with-7segment" , "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "7seg", "--with-7segment" , "", d)} \
 	BUILD_SYS=${BUILD_SYS} \
 	HOST_SYS=${HOST_SYS} \
 	STAGING_INCDIR=${STAGING_INCDIR} \
