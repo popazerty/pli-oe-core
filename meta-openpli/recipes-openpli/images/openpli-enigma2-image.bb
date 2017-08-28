@@ -91,6 +91,7 @@ IMAGE_INSTALL += " \
 	libavahi-client \
 	settings-autorestore \
 	tuxbox-common \
+	ofgwrite \
 	${ENIGMA2_PLUGINS} \
 	\
 	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "streamproxy", "", d)} \
@@ -99,6 +100,7 @@ IMAGE_INSTALL += " \
 	${@bb.utils.contains("MACHINE_FEATURES", "kernelwifi", "${KERNEL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "extrakernelwifi", "${EXTRA_KERNEL_WIFI_DRIVERS}", "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "externalwifi", "${EXTERNAL_WIFI_DRIVERS}", "", d)} \
+	${@bb.utils.contains("MACHINE_FEATURES", "legacyrt", "rt7777-legacy", "rt7777", d)} \
 	\
 	${@bb.utils.contains('OPENPLI_FEATURES', 'dvd', 'cdtextinfo', '', d)} \
 	"

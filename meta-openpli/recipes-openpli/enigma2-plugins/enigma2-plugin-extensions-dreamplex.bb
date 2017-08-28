@@ -13,7 +13,7 @@ RDEPENDS_${PN} += "${@bb.utils.contains("TARGET_ARCH", "sh4", "", "gstreamer1.0-
 
 SRC_URI = " \
 	git://github.com/DonDavici/DreamPlex.git;protocol=git \
-	file://skin.tar.gz \
+	file://skin.zip \
 	file://blue.patch;patch=1 \
 	"
 
@@ -29,7 +29,7 @@ EXTRA_OECONF = " \
 do_install_append() {
 	mkdir -p ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex
 	rm -f ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/skins/default_FHD/skin.xml
-	cp -rp ${WORKDIR}/DreamPlex/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/
+	cp -r ${WORKDIR}/DreamPlex/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/DreamPlex/
 }
 
 PACKAGES += "enigma2-plugin-extensions-dreamplex-meta"

@@ -71,7 +71,6 @@ OPTIONAL_PACKAGES += " \
 	picocom \
 	ppp \
 	rsync \
-	rtl8192eu \
 	rtorrent \
 	sabnzbd \
 	satipclient \
@@ -126,6 +125,9 @@ ENIGMA2_OPTIONAL = " \
 	enigma2-plugin-security-firewall \
 	enigma2-plugin-skins-pli-hd \
 	enigma2-plugin-skins-pli-hd-fullnight \
+	enigma2-plugin-skins-dreamplexskins \
+	enigma2-plugin-skins-mx-hq9w \
+	enigma2-plugin-skins-mx-hq7 \
 	enigma2-plugins \
 	enigma2-skins \
 	picons-enigma2-meta \
